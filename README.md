@@ -12,6 +12,16 @@ hmproto34s is a derivative of [hmproto34](https://github.com/hmasdev/hmproto34).
 
 ## How to Use
 
+The most simple way to use hmproto34s is to flash the pre-built firmware to your keyboard.
+
+Download the latest firmware from [Releases](https://github.com/hmasdev/hmproto34s/releases), which enables you to customize the keymap using [Vial](https://vial.rocks/).
+
+Then follow the instructions in [How to Flash Firmware](#how-to-flash-firmware).
+
+The next 2 subsections explain how to build firmware and flash it to your keyboard.
+
+If you want to know how to build the keyboard, see [How to Build Keyboard](#how-to-build-keyboard).
+
 ### How to Build Firmware
 
 1. Setup your QMK environment
@@ -60,15 +70,79 @@ OK. Now, you can use your hmproto34s keyboard! Try typing something!
 
 3. [Flash firmware again](#how-to-flash-firmware);
 
+## How to Build Keyboard
+
+### Required Components
+
+| Component | Quantity | Note |
+| --- | --- | --- |
+| PCB | 1 | [Gerber files](./pcb) |
+| Top Plate | 2 | [Gerber files](./top_plate) |
+| Pro Micro | 1 | |
+| Tactile Switch | 1 | Reset Switch |
+| Kalih PCB Socket | 34 | For MX Compatible Switch |
+| MX Compatible Switch | 34 | |
+| KeyCap | 30 (1u), 4 (1u-2u) | |
+| Micro USB Cable | 1 | the type of USB depends on the Pro Micro |
+
+### Assembly Steps
+
+1. Solder PCB Sockets to the bottom of the PCB;
+2. Attach diodes to the top of the PCB and solder them on the bottom of the PCB;
+3. Attach a tactile switche to the top of the PCB and solder it on the bottom of the PCB;
+4. Attach a Pro Micro to the top of the PCB;
+5. Attach key switches to the top plate;
+
+   ![Attach Key Switches to Top Plate](https://github.com/hmasdev/hmproto34/blob/main/pics/attach-keyswitches-to-top-plate.jpg?raw=true)
+
+6. Joint the top plate and PCBs;
+7. Build and flash firmware;
+   - See [How to Build Firmware](#how-to-build-firmware) and [How to Flash Firmware](#how-to-flash-firmware) for more information.
+8. Enjoy typing!
+
 ## PCB and Top Plate
 
 ### PCB
 
-TBD
+Gerber files are located in [./pcb](./pcb) directory.
+You can order the PCB from PCB manufacturers like JLCPCB etc.
 
 ### Top Plate
 
-TBD
+See [Top Plate of hmproto34](https://github.com/hmasdev/hmproto34/tree/main/top_plate).
+
+## How to Contribute
+
+1. Fork the repository: [https://github.com/hmasdev/hmproto34s](https://github.com/hmasdev/hmproto34s)
+2. Clone the repository
+
+   ```bash
+   git clone https://github.com/{YOURE_NAME}/hmproto34s.git
+   cd hmproto34s
+   ```
+
+3. Checkout your working branch
+
+   ```bash
+   git checkout -b your-working-branch
+   ```
+
+4. Make your changes
+
+5. Commit your changes
+
+   ```bash
+   git add .
+   git commit -m "Your commit message"
+   ```
+
+6. Push your changes
+
+   ```bash
+   git push origin your-working-branch
+   ```
+
+7. Create a pull request: [https://github.com/hmasdev/hmproto34s/compare](https://github.com/hmasdev/hmproto34s/compare)
 
 ## LICENSE
 
