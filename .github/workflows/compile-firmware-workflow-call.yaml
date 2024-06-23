@@ -45,21 +45,27 @@ jobs:
       - name: Setup QMK
         run: |
           qmk setup -H ~/qmk_firmware -y
+      - name: Setup Vial QMK
+        run: |
+          git clone https://github.com/vial-kb/vial-qmk.git ~/vial-qmk
+          cd ~/vial-qmk
+          make git-submodule
+          qmk doctor || echo 'qmk doctor failed'
       - name: Copy my keyboards into qmk_firmsware
         run: |
-          mkdir -p ~/qmk_firmware/keyboards/hmproto34s
-          cp -r ./* ~/qmk_firmware/keyboards/hmproto34s || echo 'failed to copy'
+          mkdir -p ~/vial-qmk/keyboards/hmproto34s
+          cp -r ./* ~/vial-qmk/keyboards/hmproto34s || echo 'failed to copy'
       - name: Compile
         run: |
-          cd ~/qmk_firmware
-          qmk compile -kb "${KEYBOARD_NAME}" -km "${KEYMAP_NAME}"
+          cd ~/vial-qmk
+          make ${KEYBOARD_NAME}:${KEYMAP_NAME}
         env:
           KEYBOARD_NAME: "hmproto34s"
           KEYMAP_NAME: ${{ inputs.keymap }}
       - name: Create Artifacts Directory
         run: |
           mkdir -p ~/artifacts
-          cp ~/qmk_firmware/.build/*.hex ~/artifacts/
+          cp ~/vial-qmk/${KEYBOARD_NAME}_${KEYMAP_NAME}.hex ~/artifacts/
           cp ./LICENSE ~/artifacts/
         env:
           KEYBOARD_NAME: "hmproto34s"
