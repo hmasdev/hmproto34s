@@ -1,0 +1,38 @@
+name: syncronize with hmproto34
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 17 * * 6"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync
+        run: |
+          ./sync-with-hmproto34.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and Push
+        run: |
+          git checkout -b sync-with-hmproto34
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add keyboards
+          git status
+          git commit -m "Sync with hmproto34"
+          git push -u origin sync-with-hmproto34
+      - name: Create Pull Request
+        run: |
+          gh pr create  \
+              --title "Sync with hmproto34" \
+              --body "Sync with hmproto34" \
+              --base main \
+              --head sync-with-hmproto34 \
+              --assignee hmasdev \
+              --reviewer hmasdev \
+              --label "bot"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
