@@ -77,7 +77,7 @@ OK. Now, you can use your hmproto34s keyboard! Try typing something!
 | Component | Quantity | Note |
 | --- | --- | --- |
 | PCB | 1 | [Gerber files](./pcb) |
-| Top Plate | 2 | [Gerber files](./top_plate) |
+| Top Plate | 2 | [Gerber files](https://github.com/hmasdev/hmproto34/tree/main/top_plate) |
 | Pro Micro | 1 | |
 | Tactile Switch | 1 | Reset Switch |
 | Kalih PCB Socket | 34 | For MX Compatible Switch |
