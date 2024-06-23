@@ -8,6 +8,8 @@ hmproto34s is a hand-fitted keyboard with 34 keys.
 
 hmproto34s is a derivative of [hmproto34](https://github.com/hmasdev/hmproto34).
 
+![hmproto34s](./pics/hmproto34s.jpg)
+
 ## How to Use
 
 ### How to Build Firmware
