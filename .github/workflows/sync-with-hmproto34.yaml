@@ -16,15 +16,31 @@ jobs:
           ./sync-with-hmproto34.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Commit and Push
+      - name: Check for Changes
+        run: |
+          if [[ -n $(git status --porcelain keymaps) ]]; then
+            echo "keymaps has changed."
+            echo "changes_detected=true" >> "$GITHUB_ENV"
+          else
+            echo "keymaps has not changed."
+            echo "changes_detected=false" >> "$GITHUB_ENV"
+          fi
+      - name: Commit Changes
+        if: env.changes_detected == 'true'
         run: |
           git checkout -b sync-with-hmproto34
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git diff --exit-code info.json && exit 0 || git add keymaps
+          git add keymaps
           git status
           git commit -m "Sync with hmproto34"
+      - name: Push Changes
+        if: env.changes_detected == 'true'
+        run: |
           git push -u origin sync-with-hmproto34
+      - name: Create Pull Request
+        if: env.changes_detected == 'true'
+        run: |
           gh pr create  \
               --title "Sync with hmproto34" \
               --body "Sync with hmproto34" \
