@@ -3,7 +3,7 @@ name: syncronize with hmproto34
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 17 * * 6"
+    - cron: "0 17 * * *"
 
 jobs:
   sync:
