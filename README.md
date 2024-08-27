@@ -10,7 +10,13 @@ hmproto34s is a hand-fitted keyboard with 34 keys.
 
 hmproto34s is a derivative of [hmproto34](https://github.com/hmasdev/hmproto34).
 
-![hmproto34s](./pics/hmproto34s.jpg)
+hmproto34s has 3D-style and normal-style.
+
+![hmproto34s-normal-style](./pics/hmproto34s.jpg)
+
+![hmproto34s-3d-style](./pics/hmproto34s-3d-style.jpg)
+
+
 
 ## How to Use
 
@@ -87,11 +93,22 @@ OK. Now, you can use your hmproto34s keyboard! Try typing something!
 | KeyCap | 30 (1u), 4 (1u-2u) | |
 | Micro USB Cable | 1 | the type of USB depends on the Pro Micro |
 
+(Optional) if you want to use hmproto34s in 3D style, you need to prepare the following components
+
+| Component | Quantity | Note |
+| --- | --- | --- |
+| PCB for 3D style | 2 | [Gerber files](./pcb-for-3d-style) |
+| M3 Screw | 8 | 6mm or 8mm |
+| M3 Spacers (femail-femail) | 4 | 70mm |
+| 2x12 PinHeader P2.54mm Vertical | 2 ||
+
 ### Assembly Steps
+
+#### Normal Style
 
 1. Solder PCB Sockets to the bottom of the PCB;
 2. Attach diodes to the top of the PCB and solder them on the bottom of the PCB;
-3. Attach a tactile switche to the top of the PCB and solder it on the bottom of the PCB;
+3. Attach a tactile switch to the top of the PCB and solder it on the bottom of the PCB;
 4. Attach a Pro Micro to the top of the PCB;
 5. Attach key switches to the top plate;
 
@@ -102,12 +119,27 @@ OK. Now, you can use your hmproto34s keyboard! Try typing something!
    - See [How to Build Firmware](#how-to-build-firmware) and [How to Flash Firmware](#how-to-flash-firmware) for more information.
 8. Enjoy typing!
 
+#### 3D Style
+
+1. Solder PCB Sockets to the bottom of the PCB for 3D style;
+2. Attach diodes to the top of the PCB for 3D style and solder them on the bottom of the PCB for 3D style;
+3. Attach a tactile switch to the top of the PCB and solder it on the bottom of the PCB;
+4. Attach 2x12-pinheaders to the bottom of the PCB for 3D style;
+5. Attach the 3D-style PCB and the other PCB using M3 screws and spacers, and plug the 2x12 pin headers into the top of the PCB;
+6. Attach a Pro Micro to the top of the PCB;
+7. Attach key switches to the top plate;
+8. Joint the top plate and the top of the PCBs for 3D style;
+9. Build and flash firmware;
+10. Enjoy typing!
+
 ## PCB and Top Plate
 
 ### PCB
 
 Gerber files are located in [./pcb](./pcb) directory.
 You can order the PCB from PCB manufacturers like JLCPCB etc.
+
+The gerber files for 3D-style of PCB are located in [./pcb-for-3d-style](./pcb-for-3d-style) directory.
 
 ### Top Plate
 
