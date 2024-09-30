@@ -5,8 +5,8 @@
 
 /* layer name */
 enum keymap_layer {
-    KL_QWERTY = 0,
-    KL_NORMAN,
+    KL_NORMAN = 0,
+    KL_QWERTY,
     KL_OPE,
     KL_FUN,
     KL_SYMNUM,
