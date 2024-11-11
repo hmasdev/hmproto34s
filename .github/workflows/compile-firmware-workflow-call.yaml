@@ -49,6 +49,7 @@ jobs:
         run: |
           git clone https://github.com/vial-kb/vial-qmk.git ~/vial-qmk
           cd ~/vial-qmk
+          python -m pip install -r requirements.txt
           make git-submodule
           qmk doctor || echo 'qmk doctor failed'
       - name: Copy my keyboards into qmk_firmsware
