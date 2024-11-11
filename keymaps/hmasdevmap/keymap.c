@@ -216,10 +216,10 @@ combo_t key_combos[] = {
     COMBO(KC_WD, LSFT(KC_RBRC)),  // mod norman {
     COMBO(KC_ER, KC_RBRC),  // qwerty [
     COMBO(KC_DF, KC_RBRC),  // mod norman [
-    COMBO(KC_IU, KC_BSLS) // qwerty ]
-    COMBO(KC_RU, KC_BSLS) // mod norman ]
-    COMBO(KC_IO, LSFT(KC_BSLS)) // qwerty }
-    COMBO(KC_RP, LSFT(KC_BSLS)) // mod norman }
+    COMBO(KC_IU, KC_BSLS), // qwerty ]
+    COMBO(KC_RU, KC_BSLS), // mod norman ]
+    COMBO(KC_IO, LSFT(KC_BSLS)), // qwerty }
+    COMBO(KC_RP, LSFT(KC_BSLS)), // mod norman }
     COMBO(KC_RT, LSFT(KC_7)),  // qwerty '
     COMBO(KC_FB, LSFT(KC_7)),  // mod norman '
     COMBO(KC_WER, LSFT(KC_7)),  // qwerty '
