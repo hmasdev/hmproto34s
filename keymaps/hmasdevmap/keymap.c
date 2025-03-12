@@ -304,7 +304,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [KL_OPE] = LAYOUT(
         CKC_EXIT,            CKC_WA,              KC_MS_UP,            CKC_FU,              CKC_BE,              CKC_WO,              CKC_NU,              KC_UP,               CKC_RO,              LGUI_T(KC_LBRC),
         CKC_ZA,              KC_MS_LEFT,          KC_MS_DOWN,          KC_MS_RIGHT,         KC_BTN1,             KC_HOME,             KC_LEFT,             KC_DOWN,             KC_RIGHT,            KC_END,
-        KC_LSFT,             KC_WH_U,             KC_WH_D,             KC_BTN3,             KC_BTN2,             TD(TD_BRACKET_L),    TD(TD_BRACKET_R),    TD(TD_QUOTE),        CKC_NN,              LCTL_T(KC_INT1),
+        LSFT_T(KC_APP),      KC_WH_U,             KC_WH_D,             KC_BTN3,             KC_BTN2,             TD(TD_BRACKET_L),    TD(TD_BRACKET_R),    TD(TD_QUOTE),        CKC_NN,              LCTL_T(KC_INT1),
         LT(KL_SYMNUM, KC_TAB),XXXXXXX,            XXXXXXX,             XXXXXXX,             _______,             LSFT_T(KC_ENT),      XXXXXXX,             XXXXXXX,             XXXXXXX,             LALT_T(KC_QUOT)
     ),
 
