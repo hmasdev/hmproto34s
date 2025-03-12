@@ -17,16 +17,20 @@ enum keymap_layer {
 /* macro start */
 enum cutom_keycodes {
     CKC_BE=SAFE_RANGE,
+    CKC_DE,
     CKC_EXIT,
     CKC_FU,
     CKC_HA,
     CKC_NN,
     CKC_NU,
     CKC_NYU,
+    CKC_PO,
+    CKC_RI,
     CKC_RO,
     CKC_RYA,
     CKC_RYU,
     CKC_RYO,
+    CKC_UN,
     CKC_WA,
     CKC_WO,
     CKC_ZA,
@@ -50,16 +54,20 @@ enum cutom_keycodes {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case CKC_BE: if (record->event.pressed) { SEND_STRING("be"); } return false; break;
+        case CKC_DE: if (record->event.pressed) { SEND_STRING("de"); } return false; break;
         case CKC_EXIT: if (record->event.pressed) { SEND_STRING("exit"); } return false; break;
         case CKC_FU: if (record->event.pressed) { SEND_STRING("fu"); } return false; break;
         case CKC_HA: if (record->event.pressed) { SEND_STRING("ha"); } return false; break;
         case CKC_NN: if (record->event.pressed) { SEND_STRING("nn"); } return false; break;
         case CKC_NU: if (record->event.pressed) { SEND_STRING("nu"); } return false; break;
         case CKC_NYU: if (record->event.pressed) { SEND_STRING("nyu"); } return false; break;
+        case CKC_PO: if (record->event.pressed) { SEND_STRING("po"); } return false; break;
+        case CKC_RI: if (record->event.pressed) { SEND_STRING("ri"); } return false; break;
         case CKC_RO: if (record->event.pressed) { SEND_STRING("ro"); } return false; break;
         case CKC_RYA: if (record->event.pressed) { SEND_STRING("rya"); } return false; break;
         case CKC_RYU: if (record->event.pressed) { SEND_STRING("ryu"); } return false; break;
         case CKC_RYO: if (record->event.pressed) { SEND_STRING("ryo"); } return false; break;
+        case CKC_UN: if (record->event.pressed) { SEND_STRING("un"); } return false; break;
         case CKC_WA: if (record->event.pressed) { SEND_STRING("wa"); } return false; break;
         case CKC_WO: if (record->event.pressed) { SEND_STRING("wo"); } return false; break;
         case CKC_ZA: if (record->event.pressed) { SEND_STRING("za"); } return false; break;
@@ -127,6 +135,11 @@ const uint16_t PROGMEM KC_HJ[] = {KC_H, KC_J, COMBO_END};
 const uint16_t PROGMEM KC_TG[] = {KC_T, KC_G, COMBO_END};
 const uint16_t PROGMEM KC_FG[] = {KC_F, KC_G, COMBO_END};
 const uint16_t PROGMEM KC_HOME_LEFT[] = {KC_HOME, KC_LEFT, COMBO_END};
+
+const uint16_t PROGMEM KC_DE[] = {KC_D, KC_E, COMBO_END};
+const uint16_t PROGMEM KC_UN[] = {KC_U, KC_N, COMBO_END};
+const uint16_t PROGMEM KC_RI[] = {KC_R, KC_I, COMBO_END};
+const uint16_t PROGMEM KC_PO[] = {KC_O, KC_P, COMBO_END};
 
 const uint16_t PROGMEM KC_WE[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM KC_WD[] = {KC_W, KC_D, COMBO_END};
@@ -201,6 +214,12 @@ combo_t key_combos[] = {
     COMBO(KC_F6_F7, CKC_PYTEST),
     COMBO(KC_F7_F8, CKC_FLAKE8),
     COMBO(KC_F6_F7_F8, CKC_MYPY),
+
+    // To enhance the typing experience
+    COMBO(KC_DE, CKC_DE),  // mod norman
+    COMBO(KC_UN, CKC_UN),  // mod norman
+    COMBO(KC_RI, CKC_RI),  // mod norman
+    COMBO(KC_PO, CKC_PO),  // mod norman
 
     // To reduce the load on the index finger
     COMBO(KC_YN, KC_J),  // mod norman
