@@ -15,7 +15,7 @@ enum keymap_layer {
 
 
 /* macro start */
-enum cutom_keycodes {
+enum custom_keycodes {
     CKC_BE=SAFE_RANGE,
     CKC_DE,
     CKC_EXIT,
